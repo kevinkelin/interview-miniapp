@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myhome/myhome",
+    "pages/collection/collection"
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "程序员面试八股",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list": [{
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "收藏",
+        "pagePath": "pages/collection/collection"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/myhome/myhome"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-cell": "vant-weapp/cell",
+    "van-cell-group": "vant-weapp/cell-group"
+  }
+}
