@@ -1,0 +1,38 @@
+module.exports = {
+  getText: function (texts, val, defaultTexts) {
+    if (!texts.length) {
+      texts = defaultTexts;
+    }
+    var curVal = Math.floor(val - 1);
+    return texts[curVal];
+  },
+  getIconName: function (defaultValue, value, index, variant) {
+    var curVal = value ? value : defaultValue;
+    var name = 'star-filled';
+
+    if (curVal - index >= 1) {
+      return name;
+    } else {
+      return variant === 'outline' ? 'star' : 'star-filled';
+    }
+  },
+
+  getIconClass: function (classPrefix, defaultValue, value, index, allowHalf, disabled) {
+    var curVal = value ? value : defaultValue;
+    var className = [];
+    if (curVal - index >= 1) {
+      className.push(classPrefix + '-selected');
+      if (disabled) {
+        className.push(classPrefix + '-disabled');
+      }
+    } else if (allowHalf && curVal - index > 0) {
+      className.push(classPrefix + '-selected-half');
+      if (disabled) {
+        className.push(classPrefix + '-disabled-half');
+      }
+    } else {
+      className.push(classPrefix + '-unselected');
+    }
+    return className.join(' ');
+  },
+};

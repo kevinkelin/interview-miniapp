@@ -1,0 +1,13 @@
+<!--pages/questiondetail/questiondetail.wxml-->
+<view>
+    <view class="questiontitle">
+        <text >{{question}}</text>
+    </view>
+    
+    <t-divider/>
+    <view class="answerbox">
+        <rich-text nodes="{{answer}}" class="answertext"></rich-text>
+    </view>
+</view>
+<t-divider content="到底啦" />
+<view style="height: 50rpx;"></view>

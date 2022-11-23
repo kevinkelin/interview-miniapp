@@ -1,0 +1,3 @@
+<view class="{{ transitionClass }}" style="{{ visible ? '' : 'display: none' }}" bind:transitionend="onTransitionEnd">
+  <slot />
+</view>

@@ -1,0 +1,22 @@
+/* pages/questiondetail/questiondetail.wxss */
+
+.answerbox{
+    width: 85%;
+    margin: 0 auto;
+}
+.answertext{
+    text-align: justify;
+    padding-top: 8rpx;
+    padding-bottom: 8rpx;
+    line-height: 26px;
+    color: rgb(89, 89, 89);
+    letter-spacing: 2rpx;
+    font-size: 14px;
+    word-spacing: 2px;
+    visibility: visible;
+}
+.questiontitle{
+    font-size: large;
+    text-align: center;
+    margin-top: 10rpx;
+}

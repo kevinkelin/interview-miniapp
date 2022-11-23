@@ -1,0 +1,33 @@
+<swiper indicator-dots="{{true}}" circular="{{true}}" autoplay="{{true}}" interval="{{3000}}">
+    <swiper-item wx:for="{{topimg}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix" class="topimage"></image>
+    </swiper-item>
+</swiper>
+
+<view class="main">
+    <van-tabs active="{{ tabActive }}" bind:click="onChangeTab">
+        <van-tab wx:for="{{qtypes}}" wx:key="index" title="{{item.title}}">
+            <!--子标签 -->
+            <view wx:if="{{item.subTabs.length>0}}">
+                <t-tabs defaultValue="{{0}}" theme="tag"  space-evenly="{{false}}" bind:change="onSubTabChange">
+                    <t-tab-panel wx:for="{{item.subTabs}}"
+                    wx:for-index="subIndex" 
+                    wx:for-item="subItem"
+                    wx:key="subIndex" 
+                    label="{{subItem}}" value="{{subIndex}}" />
+                </t-tabs>
+            </view>
+            <!--  这里展示题目 -->
+            <van-cell wx:for="{{questions}}" wx:key="index" 
+            title="{{item.title}}" 
+            is-link 
+            title-class="cell-title"
+            url="/pages/questiondetail/questiondetail?id={{item._id}}"
+             />
+        </van-tab>
+    </van-tabs>
+</view>
+<van-notify id="van-notify" />
+
+<t-divider content="到底啦" />
+<view style="height: 50rpx;"></view>

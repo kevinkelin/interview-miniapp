@@ -1,13 +1,21 @@
-<view>
-    <van-button type="primary" bindtap="getData">获取数据</van-button>
-    <van-button type="warning" bindtap="getDataByCloudF">云函数获取数据</van-button>
+<swiper indicator-dots="{{true}}" circular="{{true}}" autoplay="{{true}}" interval="{{3000}}">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix" class="itemimage"></image>
+    </swiper-item>
+</swiper>
+
+<view class="gridsys">
+    <t-grid border="{{gridborder}}" column="{{4}}">
+        <t-grid-item wx:for="{{griddata}}" wx:key="index" 
+        url="{{item.url}}"
+        text="{{item.text}}" 
+        icon="{{item.img}}"></t-grid-item>
+    </t-grid>
 </view>
 
 <view>
-    <van-cell-group>
-    <van-cell title="单元格" value="内容" />
-    <van-cell title="单元格" value="内容"  border="{{ false }}" />
-    </van-cell-group>
+    <van-button type="primary" bindtap="getData">获取数据</van-button>
+    <van-button type="warning" bindtap="getDataByCloudF">云函数获取数据</van-button>
 </view>
 
 
@@ -18,3 +26,6 @@
     <view>{{item.type}}</view>
     <view>{{item.tabs}}</view>
 </view>
+
+<t-divider content="到底啦" />
+<view style="height: 50rpx;"></view>

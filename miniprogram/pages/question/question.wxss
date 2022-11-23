@@ -1,0 +1,13 @@
+/* pages/question/question.wxss */
+.topbanner{
+    width: 375rpx;
+}
+
+.topimage {
+    width: 100%;
+    border-radius: 20rpx;
+}
+
+.cell-title{
+    font-size:25rpx;
+}

@@ -2,7 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/myhome/myhome",
-    "pages/collection/collection"
+    "pages/collection/collection",
+    "pages/article/article",
+    "pages/question/question",
+    "pages/questiondetail/questiondetail"
     
   ],
   "window": {
@@ -20,6 +23,10 @@
         "pagePath": "pages/index/index"
       },
       {
+        "text": "文章",
+        "pagePath": "pages/article/article"
+      },
+      {
         "text": "收藏",
         "pagePath": "pages/collection/collection"
       },
@@ -32,6 +39,17 @@
   "usingComponents": {
     "van-button": "vant-weapp/button",
     "van-cell": "vant-weapp/cell",
-    "van-cell-group": "vant-weapp/cell-group"
+    "van-cell-group": "vant-weapp/cell-group",
+    "van-row": "vant-weapp/row/index",
+    "van-col": "vant-weapp/col/index",
+    "t-grid": "tdesign-miniprogram/grid/grid",
+    "t-grid-item": "tdesign-miniprogram/grid/grid-item",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "van-tab": "vant-weapp/tab/index",
+    "van-tabs": "vant-weapp/tabs/index",
+    "van-notify": "vant-weapp/notify/index",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel"
   }
 }

@@ -1,0 +1,20 @@
+var changeNumToStr = function (arr) {
+  return arr.map(function (item) {
+    return typeof item === 'number' ? item + 'rpx' : item;
+  });
+};
+
+var getMessageStyles = function (zIndex, offset, wrapTop, customStyle) {
+  var arr = changeNumToStr(offset);
+  var styleOffset = '';
+  styleOffset += 'top:' + arr[0] + ';';
+  styleOffset += 'right:' + arr[1] + ';';
+  styleOffset += 'left:' + arr[1] + ';';
+  var zIndexStyle = zIndex ? 'z-index:' + zIndex + ';' : '';
+  var transformStyle = 'transform: translateY(' + wrapTop + ')px;';
+  return zIndexStyle + styleOffset + transformStyle + customStyle;
+};
+
+module.exports = {
+  getMessageStyles: getMessageStyles,
+};

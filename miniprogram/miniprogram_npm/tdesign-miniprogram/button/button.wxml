@@ -1,0 +1,59 @@
+<button
+  style="{{ customStyle }}"
+  data-custom="{{ customDataset }}"
+  class="{{className}} {{prefix}}-class"
+  form-type="{{type}}"
+  open-type="{{disabled ? '' : openType}}"
+  hover-stop-propagation="{{hoverStopPropagation}}"
+  hover-start-time="{{hoverStartTime}}"
+  hover-stay-time="{{hoverStayTime}}"
+  lang="{{lang}}"
+  session-from="{{sessionFrom}}"
+  hover-class="{{variant == 'text' ? 'none' : 'button-hover'}}"
+  send-message-title="{{sendMessageTitle}}"
+  send-message-path="{{sendMessagePath}}"
+  send-message-img="{{sendMessageImg}}"
+  app-parameter="{{appParameter}}"
+  show-message-card="{{showMessageCard}}"
+  catch:tap="handleTap"
+  bind:getuserinfo="getuserinfo"
+  bind:contact="contact"
+  bind:getphonenumber="getphonenumber"
+  bind:error="error"
+  bind:opensetting="opensetting"
+  bind:launchapp="launchapp"
+  bind:chooseavatar="chooseavatar"
+>
+  <t-icon
+    wx:if="{{icon || iconProps.name}}"
+    name="{{icon || iconProps.name}}"
+    prefix="{{iconProps.prefix}}"
+    size="{{iconProps.size}}"
+    color="{{iconProps.color}}"
+    customStyle="{{iconProps.customStyle}}"
+    class="{{classPrefix}}__icon {{prefix}}-class-icon"
+  ></t-icon>
+  <view wx:if="{{loading}}" class="{{classPrefix}}__loading">
+    <t-loading
+      delay="{{loadingProps.delay || 0}}"
+      duration="{{loadingProps.duration || 800}}"
+      indicator="{{loadingProps.indicator || true}}"
+      inheritColor="{{loadingProps.indicator || false}}"
+      layout="{{loadingProps.layout || 'horizontal'}}"
+      pause="{{loadingProps.pause || false}}"
+      progress="{{loadingProps.progress}}"
+      reverse="{{loadingProps.reverse}}"
+      size="{{loadingProps.size || '40rpx'}}"
+      text="{{loadingProps.text }}"
+      theme="{{loadingProps.theme || 'circular'}}"
+      loading
+      t-class="position-center"
+      t-class-indicator="indicator-blue {{prefix}}-class-loading"
+    ></t-loading>
+  </view>
+  <view class="{{classPrefix}}__content">
+    <slot name="content" />
+    <block>{{content}}</block>
+    <slot />
+  </view>
+</button>

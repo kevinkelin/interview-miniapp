@@ -1,0 +1,42 @@
+const props = {
+    bordered: {
+        type: Boolean,
+        value: true,
+    },
+    customStyle: {
+        type: String,
+        value: '',
+    },
+    externalClasses: {
+        type: Array,
+    },
+    fixed: {
+        type: Boolean,
+        value: true,
+    },
+    safeAreaInsetBottom: {
+        type: Boolean,
+        value: true,
+    },
+    shape: {
+        type: String,
+        value: 'normal',
+    },
+    split: {
+        type: Boolean,
+        value: true,
+    },
+    theme: {
+        type: String,
+        value: 'normal',
+    },
+    value: {
+        type: null,
+        value: null,
+    },
+    defaultValue: {
+        type: null,
+        value: null,
+    },
+};
+export default props;

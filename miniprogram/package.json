@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "tdesign-miniprogram": "^0.27.0",
     "vant-weapp": "^0.5.29"
   }
 }

@@ -12,8 +12,13 @@ Component({
             },
             {
                 text: "收藏",
-                icon: "orders-o",
+                icon: "star-o",
                 url: "/pages/collection/collection"
+            },
+            {
+                text: "文章",
+                icon: "orders-o",
+                url: "/pages/article/article"
             },
             {
                 text: "我的",
