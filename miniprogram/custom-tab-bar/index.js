@@ -11,9 +11,9 @@ Component({
                 url: "/pages/index/index"
             },
             {
-                text: "收藏",
-                icon: "star-o",
-                url: "/pages/collection/collection"
+                text: "八股文",
+                icon: "notes-o",
+                url: "/pages/question/question"
             },
             {
                 text: "文章",

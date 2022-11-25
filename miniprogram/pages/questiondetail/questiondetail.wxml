@@ -1,13 +1,27 @@
 <!--pages/questiondetail/questiondetail.wxml-->
 <view>
-    <view class="questiontitle">
-        <text >{{question}}</text>
-    </view>
-    
-    <t-divider/>
-    <view class="answerbox">
-        <rich-text nodes="{{answer}}" class="answertext"></rich-text>
-    </view>
+    <t-skeleton theme="paragraph" animation="gradient" loading="{{skeletonload}}">
+        <view class="questiontitle">
+            <text>{{questiondata.title}}</text>
+        </view>
+        <t-divider />
+        <view class="answerbox">
+            <view class="headerbox">
+                <view>分类: {{questiondata.ptype}}</view>
+                <view>浏览量: {{questiondata.readcount}}</view>
+                <view>
+                    标签: <t-tag wx:for="{{questiondata.tabs}}" wx:key="index" shape="round" size="small" icon="discount" class="tabsblock" variant="light-outline">{{item}}</t-tag>
+                </view>
+            </view>
+
+            <rich-text wx:if="{{answerich}}" nodes="{{answerich}}" class="answertext"></rich-text>
+            <towxml wx:if="{{answer}}" nodes="{{answer}}" />
+        </view>
+        <view class="footer">
+            <van-button wx:if="{{liked}}" icon="good-job" bindtap="postlike">取消点赞</van-button>
+            <van-button wx:else="" icon="good-job-o" type="primary" bindtap="postlike">点赞</van-button>
+            <van-button type="info" icon="share">分享</van-button>
+        </view>
+        <t-divider content="到底啦" />
+    </t-skeleton>
 </view>
-<t-divider content="到底啦" />
-<view style="height: 50rpx;"></view>

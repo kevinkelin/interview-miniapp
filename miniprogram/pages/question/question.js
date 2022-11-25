@@ -1,7 +1,5 @@
 // pages/question/question.js
-import Notify from '../../miniprogram_npm/vant-weapp/notify/notify';
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -9,7 +7,8 @@ Page({
         topimg: [
             "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner5.jpeg",
         ],
-        querytype: "",
+        skeletonload:true,
+        querytype: "backend",
         querysubtab: "all",
         tabActive: 0,
         questions: [],
@@ -79,16 +78,22 @@ Page({
             }
         }).then(res=>{
             this.setData({
-                questions: this.data.questions.concat(res.result.data)
+                questions: this.data.questions.concat(res.result.data),
+                skeletonload: false
             })
+            
         }).catch(err=>{
-            console.log(err, 2222)
+            console.log(err)
+            this.setData({
+                skeletonload: false
+            })
         })
     },
 
     // 这个是上面的主tab切换
     onChangeTab(event) {
         var tabitem = this.data.qtypes[event.detail.index]
+        getApp().globalData.questionPtype = tabitem.value
         this.setData({
             querytype: tabitem.value,
             querysubtab: "all",
@@ -106,21 +111,15 @@ Page({
         this.getQuestions()
     },
 
-
-
-
-
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        var type = options["type"]
+        var type = getApp().globalData.questionPtype
         if(type == undefined){
-            Notify({
-                text: '未正确选择分类',
-                duration: 1000,
-              });
+            // 如果没有选就使用第一个
+            getApp().globalData.questionPtype = this.data.qtypes[0].value
+            type = this.data.qtypes[0].value
         }else{
             //  切换active 
             this.setData({
@@ -133,9 +132,9 @@ Page({
                     })
                     break
                 }
-            }
-            this.getQuestions()            
+            }          
         }
+        this.getQuestions() 
     },
 
     /**
@@ -149,7 +148,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        
+        this.getTabBar().init();
     },
 
     /**

@@ -1,0 +1,13 @@
+/* pages/mylike/mylike.wxss */
+
+.header{
+    display: block;
+    margin-top: 20rpx;
+    margin-bottom: 32rpx;
+    text-align: center;
+}
+
+.headerimg{
+    width: 100%;
+    border-radius: 20rpx;
+}

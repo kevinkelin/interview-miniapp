@@ -18,12 +18,14 @@
                 </t-tabs>
             </view>
             <!--  这里展示题目 -->
-            <van-cell wx:for="{{questions}}" wx:key="index" 
-            title="{{item.title}}" 
-            is-link 
-            title-class="cell-title"
-            url="/pages/questiondetail/questiondetail?id={{item._id}}"
-             />
+            <t-skeleton theme="paragraph" animation="gradient" loading="{{skeletonload}}">
+                <van-cell wx:for="{{questions}}" wx:key="index" 
+                title="{{item.title}}" 
+                is-link 
+                title-class="cell-title"
+                url="/pages/questiondetail/questiondetail?id={{item._id}}"
+                />
+            </t-skeleton>
         </van-tab>
     </van-tabs>
 </view>

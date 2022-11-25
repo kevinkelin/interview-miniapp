@@ -11,3 +11,7 @@
 .cell-title{
     font-size:25rpx;
 }
+
+.loadingall{
+    text-align: center;
+}

@@ -1,2 +1,20 @@
 <!--pages/myhome/myhome.wxml-->
-<text>pages/myhome/myhome.wxml</text>
+<view>
+    <view class="header">
+        <t-avatar image="{{avatarurl}}" />
+        <text class="nickname">{{nickName}}</text>
+        <van-button wx:if="{{hasUserInfo}}" type="info" plain size="small" bindtap="logout">清理缓存</van-button>
+        <van-button wx:else="" type="info" plain size="small" bindtap="syncUserProfile">同步用户</van-button>
+    </view>
+    <view class="main">
+        <van-cell-group>
+            <van-cell wx:if="{{hasUserInfo}}" title="修改头像与昵称" is-link 
+            url="/pages/setProfile/setProfile?avatarUrl={{avatarurl}}&nickName={{nickName}}" />
+            <van-cell wx:else="" title="设置头像与昵称" is-link  
+            url="/pages/setProfile/setProfile?avatarUrl={{avatarurl}}&nickName={{nickName}}"/>
+            <van-cell title="我的点赞" is-link url="/pages/mylike/mylike" />
+            <van-cell title="关于这个小程序" is-link url="/pages/mylike/mylike" />
+        </van-cell-group>
+    </view>
+    <van-dialog id="van-dialog" />
+</view>

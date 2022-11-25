@@ -5,7 +5,29 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        headerimg: "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/article1.jpeg",
+        categories:[
+            {
+                title: "后端技术",
+                value: "backend",
+                subTabs: ["all","java", "golang", "python"]
+            },
+            {
+                title: "前端技术",
+                value: "frontend",
+                subTabs: ["all","vue", "react"]
+            },
+            {
+                title: "数据库",
+                value: "database",
+                subTabs: ["all", "MySQL", "redis", "mongo","elasticSearch"]
+            },
+            {
+                title: "系统架构",
+                value: "framework",
+                subTabs: ["all"]
+            },
+        ],
     },
 
     /**

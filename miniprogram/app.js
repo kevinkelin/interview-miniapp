@@ -1,5 +1,6 @@
 // app.js
 App({
+  towxml:require('/towxml/index'),
   onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
@@ -13,7 +14,19 @@ App({
         traceUser: true,
       });
     }
-
     this.globalData = {};
+  },
+  hasUserInfo(){
+    //   判断用户是否登录
+    if(this.globalData.userInfo && this.globalData.userInfo.nickName){
+        return true
+    }
+    let userinfo = wx.getStorageSync('userinfo')
+    if(userinfo && userinfo.nickName){
+        this.globalData.userInfo = userinfo
+        return true
+    }else{
+        return false
+    }
   }
 });

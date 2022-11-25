@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20rpx 20rpx;
+    margin: 10rpx; 
+}
+
+.profileform{
+    display: flex;
+    justify-content: space-around;
+    margin: 20rpx;
+    align-items: center;
+}
+
+.nickform{
+    border:steelblue solid 1rpx ;
+}
+
+.footer{
+    display: flex;
+    justify-content:right;
+    margin: 20rpx;
+}
+

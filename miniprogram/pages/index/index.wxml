@@ -6,25 +6,12 @@
 
 <view class="gridsys">
     <t-grid border="{{gridborder}}" column="{{4}}">
-        <t-grid-item wx:for="{{griddata}}" wx:key="index" 
-        url="{{item.url}}"
-        text="{{item.text}}" 
-        icon="{{item.img}}"></t-grid-item>
+        <t-grid-item wx:for="{{griddata}}" wx:key="index" bindtap="redirectoQuestion" data-qtype="{{item.qtype}}" url="{{item.url}}" text="{{item.text}}" icon="{{item.img}}"></t-grid-item>
     </t-grid>
 </view>
 
-<view>
-    <van-button type="primary" bindtap="getData">获取数据</van-button>
-    <van-button type="warning" bindtap="getDataByCloudF">云函数获取数据</van-button>
-</view>
-
-
-
-<view wx:for="{{dataList}}" wx:key="index">
-    <view>{{item.title}}</view>
-    <view>{{item.answer}}</view>
-    <view>{{item.type}}</view>
-    <view>{{item.tabs}}</view>
+<view class="spicelblock">
+    <image class="middleimg" src="{{middleimg}}" mode="widthFix" />
 </view>
 
 <t-divider content="到底啦" />

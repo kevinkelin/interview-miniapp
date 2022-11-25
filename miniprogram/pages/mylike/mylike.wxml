@@ -1,0 +1,7 @@
+<!--pages/mylike/mylike.wxml-->
+<view>
+    <view class="header">
+        <image class="headerimg" src="{{headerimg}}" mode="widthFix" />
+    </view>
+    
+</view>

@@ -1,1 +1,19 @@
 /* pages/myhome/myhome.wxss */
+.header{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20rpx 20rpx;
+    margin: 10rpx; 
+}
+
+.nickname{
+    margin: 0 20rpx;
+}
+
+.main{
+    margin: 20rpx;
+}
+.debuginfo{
+    word-break: break-word;
+}

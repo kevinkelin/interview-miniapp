@@ -2,10 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/myhome/myhome",
-    "pages/collection/collection",
     "pages/article/article",
     "pages/question/question",
-    "pages/questiondetail/questiondetail"
+    "pages/questiondetail/questiondetail",
+    "pages/mylike/mylike",
+    "pages/setProfile/setProfile"
     
   ],
   "window": {
@@ -27,8 +28,8 @@
         "pagePath": "pages/article/article"
       },
       {
-        "text": "收藏",
-        "pagePath": "pages/collection/collection"
+        "text": "八股文",
+        "pagePath": "pages/question/question"
       },
       {
         "text": "我的",
@@ -50,6 +51,17 @@
     "van-tabs": "vant-weapp/tabs/index",
     "van-notify": "vant-weapp/notify/index",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
-    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel"
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel",
+    "van-loading": "vant-weapp/loading/index",
+    "t-loading": "tdesign-miniprogram/loading/loading",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-check-tag": "tdesign-miniprogram/tag/check-tag",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
+    "t-input": "tdesign-miniprogram/input/input",
+    "van-dialog": "vant-weapp/dialog/index",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-skeleton": "tdesign-miniprogram/skeleton/skeleton"
   }
 }

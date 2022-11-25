@@ -1,7 +1,7 @@
 {
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "#58bd8a",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "各种八股文",
+    "navigationBarTitleText": "八股文",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "usingComponents": {}

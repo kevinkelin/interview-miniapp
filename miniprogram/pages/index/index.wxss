@@ -17,9 +17,17 @@ swiper {
 }
 
 .middleimg {
-    height: 50rpx;
+    width: 100%;
+    border-radius: 20rpx;
 }
 
 .gridsys{
     margin: 20rpx;
+}
+
+.spicelblock{
+    display: block;
+    margin-top: 20rpx;
+    margin-bottom: 32rpx;
+    text-align: center;
 }

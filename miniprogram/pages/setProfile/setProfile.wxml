@@ -1,0 +1,27 @@
+<!--pages/setProfile/setProfile.wxml-->
+<view>
+    <t-notice-bar  visible="{{true}}" 
+    prefixIcon="error-circle-filled"
+    content="不设置头像和昵称并不会影响您使用本小程序，只是自己会看着别扭一些">  
+    </t-notice-bar>
+    <view class="header">
+        <t-avatar image="{{avatarUrl}}" />
+        <text class="nickname">{{nickName}}</text>
+    </view>
+    <view class="profileform">
+        <button open-type="chooseAvatar" 
+        type="primary"
+        plain="{{true}}" 
+        size="mini" 
+        bind:chooseavatar="onChooseAvatar">设置头像</button>
+        <input 
+        type="nickname" 
+        model:value="{{nickName}}"
+        class="nickform" 
+        maxlength="20"
+        placeholder="请输入昵称"/>
+    </view>
+    <view class="footer">
+        <van-button type="info" size="small" bindtap="submitprofile">提交</van-button>
+    </view>
+</view>
