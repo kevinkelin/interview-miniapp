@@ -3,7 +3,9 @@
         <image src="{{item}}" mode="widthFix" class="itemimage"></image>
     </swiper-item>
 </swiper>
-
+<!-- <view>
+    <mysearch bindcourse="handleCourse"></mysearch>
+</view> -->
 <view class="gridsys">
     <t-grid border="{{gridborder}}" column="{{3}}">
         <t-grid-item wx:for="{{griddata}}" wx:key="index" bindtap="redirectoQuestion" data-qtype="{{item.qtype}}" url="{{item.url}}" text="{{item.text}}" icon="{{item.img}}"></t-grid-item>

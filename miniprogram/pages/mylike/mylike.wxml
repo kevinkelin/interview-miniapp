@@ -19,7 +19,7 @@
                 url="/pages/questiondetail/questiondetail?id={{item.questionid}}"
                 />
             </t-tab-panel>
-            <t-tab-panel label="点赞的文章" value="article">
+            <!-- <t-tab-panel label="点赞的文章" value="article">
                 <van-cell wx:for="{{myLikeArticle}}" wx:key="index" 
                 title="{{item.title}}" 
                 is-link 
@@ -27,7 +27,7 @@
                 title-class="cell-title"
                 url="/pages/articledetail/articledetail?id={{item.questionid}}"
                 />
-            </t-tab-panel>
+            </t-tab-panel> -->
         </t-tabs>
     </t-skeleton>
     <t-divider content="到底啦" />

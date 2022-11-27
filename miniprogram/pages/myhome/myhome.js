@@ -61,27 +61,7 @@ Page({
         }).catch(err=>{
             console.error(err, 222)
         }) 
-        // getUserProfile 不好用了
-        // wx.getUserProfile({
-        //     desc: '获取用户的头像与昵称',
-        //     success: (res)=>{
-        //     console.log(res, 1111)
-        //     wx.setStorageSync('userinfo', res.userInfo)
-        //     app.globalData.userInfo = res.userInfo
-        //     this.setData({
-        //         debugtext: JSON.stringify(app.globalData.userInfo),
-        //         avatarurl: app.globalData.userInfo.avatarUrl,
-        //         nickName: app.globalData.userInfo.nickName,
-        //         hasUserInfo: true
-        //     })
-        //     },
-        //     fail:(err)=>{
-        //         this.setData({
-        //             debugtext: JSON.stringify(err)
-        //         })
-        //         console.error(err)
-        //     }
-        // })
+        
     },
     /**
      * 生命周期函数--监听页面加载

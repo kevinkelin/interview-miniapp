@@ -85,35 +85,6 @@ Page({
             wx.hideLoading()
         })
     },
-    // 点击点赞按钮 作废
-    clicklike() {
-        this.postlike()
-        // 点赞与取消点赞是同一个操作，依赖于liked值
-        // 只有登录的用户才可以
-        var that = this
-        if (!app.hasUserInfo()) {
-            // 没有登录，要先登录
-            wx.getUserProfile({
-                desc: '只有登录用户才可以查看哦',
-                success: res => {
-                    console.log(res)
-                    wx.setStorageSync('userinfo', res.userInfo)
-                    app.globalData.userInfo = res.userInfo
-                    that.postlike()
-                },
-                fail: err => {
-                    wx.showToast({
-                        title: '用户取消登录',
-                    })
-                    console.error(err)
-                    return
-                }
-            })
-        }else{
-            this.postlike()
-        }
-        
-    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

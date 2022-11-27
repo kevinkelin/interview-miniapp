@@ -8,7 +8,8 @@
     "pages/questiondetail/questiondetail",
     "pages/mylike/mylike",
     "pages/setProfile/setProfile",
-    "pages/aboutme/aboutme"
+    "pages/aboutme/aboutme",
+    "pages/search/search"
     
   ],
   "window": {
@@ -26,8 +27,8 @@
         "pagePath": "pages/index/index"
       },
       {
-        "text": "文章",
-        "pagePath": "pages/article/article"
+        "text": "搜索",
+        "pagePath": "pages/search/search"
       },
       {
         "text": "八股文",
@@ -64,6 +65,7 @@
     "t-input": "tdesign-miniprogram/input/input",
     "van-dialog": "vant-weapp/dialog/index",
     "t-image": "tdesign-miniprogram/image/image",
-    "t-skeleton": "tdesign-miniprogram/skeleton/skeleton"
+    "t-skeleton": "tdesign-miniprogram/skeleton/skeleton",
+    "van-search": "vant-weapp/search/index"
   }
 }

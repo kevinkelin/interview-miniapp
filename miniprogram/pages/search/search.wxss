@@ -1,0 +1,11 @@
+/* pages/search/search.wxss */
+
+.loading-container-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.loadingtext {
+    font-size: 25rpx;
+    width: 750rpx;
+}

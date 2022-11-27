@@ -16,9 +16,9 @@ Component({
                 url: "/pages/question/question"
             },
             {
-                text: "文章",
-                icon: "orders-o",
-                url: "/pages/article/article"
+                text: "搜索",
+                icon: "search",
+                url: "/pages/search/search"
             },
             {
                 text: "我的",

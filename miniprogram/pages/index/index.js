@@ -67,7 +67,12 @@ Page({
         hotContent: {},
         skeletonload: true
     },
-
+    handleCourse(e){
+        console.log(e)
+        wx.navigateTo({
+          url: '/pages/search/search',
+        })
+    },
     redirectoQuestion(event) {
         console.log(event.target.dataset.qtype)
         getApp().globalData.questionPtype = event.target.dataset.qtype

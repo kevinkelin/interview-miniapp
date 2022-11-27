@@ -1,0 +1,27 @@
+<!--pages/search/search.wxml-->
+<view>
+    <view>
+        <van-search value="{{ searchText }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
+    </view>
+    <!-- 分类 -->
+    <view>
+        <view>
+            <t-tabs defaultValue="{{tabActive}}"
+             bind:change="onTabChange" 
+             theme="tag"  space-evenly="{{false}}" 
+             t-class="custom-tabs">
+                <t-tab-panel 
+                wx:for="{{tabs}}" 
+                wx:key="index" 
+                label="{{item.label}}" value="{{item.name}}"></t-tab-panel>
+            </t-tabs>
+        </view>
+        <view>
+            <!-- 这里展示标题 -->
+            <van-cell wx:for="{{articles}}" wx:key="index" title="{{item.title}}" is-link title-class="cell-title" url="/pages/questiondetail/questiondetail?id={{item._id}}" />
+        </view>
+    </view>
+    <view class="loading-container-flex">
+        <t-loading delay="500" loading="{{dataloading}}" theme="circular" size="50rpx" text="数据加载中..." t-class-text="loadingtext"></t-loading>
+    </view>
+</view>
