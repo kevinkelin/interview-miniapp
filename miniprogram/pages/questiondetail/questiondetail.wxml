@@ -20,7 +20,7 @@
         <view class="footer">
             <van-button wx:if="{{liked}}" icon="good-job" bindtap="postlike">取消点赞</van-button>
             <van-button wx:else="" icon="good-job-o" type="primary" bindtap="postlike">点赞</van-button>
-            <van-button type="info" icon="share">分享</van-button>
+            <van-button open-type="share"  type="info" icon="share">分享</van-button>
         </view>
         <t-divider content="到底啦" />
     </t-skeleton>

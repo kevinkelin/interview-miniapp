@@ -1,0 +1,53 @@
+/* pages/articledetail/articledetail.wxss */
+
+.answerbox{
+    width: 90%;
+    margin: 0 auto;
+    color: rgb(89, 89, 89);
+    letter-spacing: 2rpx;
+    font-size: 14px;
+    word-spacing: 2px;
+    line-height: 26px;
+    visibility: visible;
+    word-break: break-word;
+}
+/* .answertext{
+    text-align: justify;
+    padding-top: 8rpx;
+    padding-bottom: 8rpx;
+    line-height: 26px;
+    color: rgb(89, 89, 89);
+    letter-spacing: 2rpx;
+    font-size: 14px;
+    word-spacing: 2px;
+    visibility: visible;
+} */
+.questiontitle{
+    font-size: large;
+    margin-top: 10rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    color: steelblue;
+}
+
+.headerbox{
+    margin: 20rpx 0;
+}
+
+.tabsblock{
+    margin-left: 32rpx;
+}
+
+.footer{
+    margin:20rpx 20rpx;
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-around;
+}
+
+.copyright{
+    font-size: 30rpx;
+    border:solid 1rpx;
+    background-color:skyblue;
+    margin:20rpx 10rpx 20rpx, 10rpx;
+}

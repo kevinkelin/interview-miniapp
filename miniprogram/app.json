@@ -3,10 +3,12 @@
     "pages/index/index",
     "pages/myhome/myhome",
     "pages/article/article",
+    "pages/articledetail/articledetail",
     "pages/question/question",
     "pages/questiondetail/questiondetail",
     "pages/mylike/mylike",
-    "pages/setProfile/setProfile"
+    "pages/setProfile/setProfile",
+    "pages/aboutme/aboutme"
     
   ],
   "window": {

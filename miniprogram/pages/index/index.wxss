@@ -26,8 +26,11 @@ swiper {
 }
 
 .spicelblock{
-    display: block;
     margin-top: 20rpx;
     margin-bottom: 32rpx;
     text-align: center;
+}
+
+.cell-title{
+    font-size:30rpx;
 }

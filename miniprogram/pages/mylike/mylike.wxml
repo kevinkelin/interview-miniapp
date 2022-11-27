@@ -1,7 +1,42 @@
 <!--pages/mylike/mylike.wxml-->
+<wxs module="tools" src="../../wxs/tools.wxs"></wxs>
 <view>
-    <view class="header">
-        <image class="headerimg" src="{{headerimg}}" mode="widthFix" />
+    <swiper indicator-dots="{{true}}" circular="{{true}}" autoplay="{{true}}" interval="{{3000}}">
+        <swiper-item wx:for="{{swiperList}}" wx:key="index">
+            <image src="{{item}}" mode="widthFix" class="itemimage"></image>
+        </swiper-item>
+    </swiper>
+    <view>
+    <!-- 我的点赞内容 -->
+    <t-skeleton theme="paragraph" animation="gradient" loading="{{skeletonload}}">
+        <t-tabs defaultValue="{{currentTab}}" bind:change="onTabsChange" t-class="custom-tabs">
+            <t-tab-panel label="点赞的八股文" value="question">
+                <van-cell wx:for="{{myLikeQuestion}}" wx:key="index" 
+                title="{{item.title}}" 
+                is-link 
+                label="{{tools.parseTime(item._createTime, 3)}}"
+                title-class="cell-title"
+                url="/pages/questiondetail/questiondetail?id={{item.questionid}}"
+                />
+            </t-tab-panel>
+            <t-tab-panel label="点赞的文章" value="article">
+                <van-cell wx:for="{{myLikeArticle}}" wx:key="index" 
+                title="{{item.title}}" 
+                is-link 
+                label="{{tools.parseTime(item._createTime, 3)}}"
+                title-class="cell-title"
+                url="/pages/articledetail/articledetail?id={{item.questionid}}"
+                />
+            </t-tab-panel>
+        </t-tabs>
+    </t-skeleton>
+    <t-divider content="到底啦" />
+    <view class="loading-container-flex">
+        <t-loading delay="500" loading="{{dataloading}}" theme="circular" size="50rpx" text="数据加载中..." t-class-text="loadingtext"></t-loading>
     </view>
-    
+<view style="height: 50rpx;"></view>
+</view>
+
+
+
 </view>

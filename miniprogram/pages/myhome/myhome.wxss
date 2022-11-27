@@ -17,3 +17,9 @@
 .debuginfo{
     word-break: break-word;
 }
+
+.footer{
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-around;
+}

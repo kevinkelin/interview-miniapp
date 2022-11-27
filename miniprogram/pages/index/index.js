@@ -5,58 +5,67 @@ Page({
      * 页面的初始数据
      */
     data: {
-        swiperList: [
-            "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner2.jpeg",
-            "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner3.jpeg",
-            "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner4.jpeg"
+        // swiperList: [
+        //     "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner2.jpeg",
+        //     "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner3.jpeg",
+        //     "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner4.jpeg"
+        // ],
+        swiperList:[
+            "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/banner2.jpeg",
+            "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/banner6.jpeg",
+            "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/banner4.jpeg"
         ],
-        middleimg:"cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/9961.jpeg",
+        // middleimg:"cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/9961.jpeg",
+        middleimg: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/indexmain.jpeg",
         gridborder: {
             color: '#f6f6f6',
         },
-        griddata: [{
-                text: "计算机网络",
-                icon: "server",
-                img: "/images/gridimg/network.png",
-                qtype: "network"
-            },
-            {
-                text: "操作系统",
-                icon: "server",
-                img: "/images/gridimg/os.png",
-                qtype: "os",
-            },
+        griddata: [
             {
                 text: "后端技术",
                 icon: "server",
-                img: "/images/gridimg/backend.png",
+                img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/backend.png",
                 qtype: "backend"
             },
             {
                 text: "前端技术",
                 icon: "server",
-                img: "/images/gridimg/front.png",
+                img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/front.png",
                 qtype: "frontend",
             },
             {
                 text: "数据库",
                 icon: "server",
-                img: "/images/gridimg/database.png",
+                img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/database.png",
                 qtype: "database"
-            },
-            {
-                text: "设计模式",
-                icon: "server",
-                img: "/images/gridimg/design.png",
-                qtype: "design",
             },
             {
                 text: "系统架构",
                 icon: "server",
-                img: "/images/gridimg/jiagou.png",
+                img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/jiagou.png",
                 qtype: "framework",
             },
-        ]
+            {
+                text: "操作系统",
+                icon: "server",
+                img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/os.png",
+                qtype: "os",
+            },
+            {
+                text: "计算机网络",
+                icon: "server",
+                img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/network.png",
+                qtype: "network"
+            },
+            // {
+            //     text: "设计模式",
+            //     icon: "server",
+            //     img: "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/design.png",
+            //     qtype: "design",
+            // },  
+        ],
+        hotContent: {},
+        skeletonload: true
     },
 
     redirectoQuestion(event) {
@@ -65,14 +74,29 @@ Page({
         wx.switchTab({
             url: '/pages/question/question',
         })
-        console.log(2222)
+    },
+
+    getHotContent(){
+        wx.cloud.callFunction({
+            name: "getHotContent"
+        }).then(res=>{
+            this.setData({
+                hotContent: res.result,
+                skeletonload: false
+            })
+        }).catch(err=>{
+            console.error(err)
+            this.setData({
+                skeletonload: false
+            })
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getHotContent()
     },
 
     /**

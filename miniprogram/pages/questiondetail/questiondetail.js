@@ -1,6 +1,7 @@
 // pages/questiondetail/questiondetail.js
 const app = getApp();
 let docid
+var common = require("../../common/common.js")
 Page({
     /**
      * 页面的初始数据
@@ -17,10 +18,6 @@ Page({
     },
 
     getanswer(docid){
-        // docid = options.id
-        // wx.showLoading({
-        //     title: '数据加载中。。。',
-        // })
         wx.cloud.callFunction({
             name: "getAnswer",
             data: {
@@ -35,7 +32,7 @@ Page({
                 answermarkdown_ = app.towxml(res.result.data.answer, 'markdown', {});
             }
             if (res.result.data.answerrich) {
-                answerrich_ = this.replaceDetail(res.result.data.answerrich)
+                answerrich_ = common.replaceRichDetail(res.result.data.answerrich)
             }
             this.setData({
                 questiondata: res.result.data,
@@ -65,21 +62,6 @@ Page({
         this.getanswer(options.id)
     },
 
-    replaceDetail(details) {
-        var texts = ''; //待拼接的内容
-        while (details.indexOf('<img') != -1) { //寻找img 循环
-            texts += details.substring('0', details.indexOf('<img') + 4); //截取到<img前面的内容
-            details = details.substring(details.indexOf('<img') + 4); //<img 后面的内容
-            if (details.indexOf('style=') != -1 && details.indexOf('style=') < details.indexOf('>')) {
-                texts += details.substring(0, details.indexOf('style="') + 7) + "max-width:100%;height:auto;margin:0 auto;"; //从 <img 后面的内容 截取到style= 加上自己要加的内容
-                details = details.substring(details.indexOf('style="') + 7); //style后面的内容拼接
-            } else {
-                texts += ' style="max-width:100%;height:auto;margin:0 auto;" ';
-            }
-        }
-        texts += details; //最后拼接的内容
-        return texts
-    },
     postlike(){
         wx.showLoading({
           title: '数据提交中。。。',
@@ -89,7 +71,8 @@ Page({
             data: {
                 liked: !this.data.liked,
                 docid: docid,
-                title: this.data.questiondata.title
+                title: this.data.questiondata.title,
+                doctype: "question"
             }
         }).then(res => {
             console.log(res)

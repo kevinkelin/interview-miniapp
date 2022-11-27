@@ -1,18 +1,41 @@
-// pages/collection/collection.js
+// pages/aboutme/aboutme.js
+var common = require("../../common/common.js")
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {
+        aboutext: ""
+    },
 
+    getAboutContent(){
+        wx.cloud.callFunction({
+            name: "getAboutContent",
+            data:{
+                ctype: "about"
+            }
+        }).then(res=>{
+            console.log(res)
+            if(res.result.data.length==0){
+                wx.showToast({
+                  title: '未获取到关于内容',
+                })
+                return
+            }
+            var pagedata = res.result.data[0]
+            this.setData({
+                aboutext: common.replaceRichDetail(pagedata.content)
+            })
+        }).catch(err=>{
+            console.error(err)
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        this.getAboutContent()
     },
 
     /**
@@ -26,7 +49,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        this.getTabBar().init();
+
     },
 
     /**

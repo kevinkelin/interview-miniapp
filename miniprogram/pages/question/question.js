@@ -5,13 +5,15 @@ Page({
      */
     data: {
         topimg: [
-            "cloud://miniapp-interview-4emkbr37f050a5.6d69-miniapp-interview-4emkbr37f050a5-1315236622/banner5.jpeg",
+            "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/banner5.jpeg",
+            "https://miniappbagu.oss-cn-hangzhou.aliyuncs.com/miniapp-bagu/9961.jpeg"
         ],
         skeletonload:true,
         querytype: "backend",
         querysubtab: "all",
         tabActive: 0,
         questions: [],
+        dataloading: false,
         qtypes:[
             {
                 title: "后端技术",
@@ -29,7 +31,12 @@ Page({
                 subTabs: ["all", "MySQL", "redis", "mongo","elasticSearch"]
             },
             {
-                title: "计算机网络",
+                title: "系统架构",
+                value: "framework",
+                subTabs: []
+            },
+            {
+                title: "网络",
                 value: "network",
                 subTabs: []
             },
@@ -41,11 +48,6 @@ Page({
             {
                 title: "设计模式",
                 value: "design",
-                subTabs: []
-            },
-            {
-                title: "系统架构",
-                value: "framework",
                 subTabs: []
             },
         ],
@@ -68,24 +70,39 @@ Page({
         })
     },
 
-    getQuestions(){
+    getQuestions(getmore=false){
+        if(getmore){
+            this.setData({
+                dataloading: true,
+                skeletonload: false
+            })
+        }else{
+            this.setData({
+                dataloading: false,
+                skeletonload: true
+            })
+        }
         wx.cloud.callFunction({
             name: "getQuestions",
             data: {
                 ptype: this.data.querytype,
                 stab: this.data.querysubtab,
-                skip: this.data.questions.length
+                skip: this.data.questions.length,
+                dataloading: false,
+                skeletonload: false
             }
         }).then(res=>{
             this.setData({
                 questions: this.data.questions.concat(res.result.data),
+                dataloading: false,
                 skeletonload: false
             })
             
         }).catch(err=>{
             console.log(err)
             this.setData({
-                skeletonload: false
+                skeletonload: false,
+                dataloading: false
             })
         })
     },
@@ -169,14 +186,13 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh() {
-
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        this.getQuestions(true)
     },
 
     /**

@@ -11,3 +11,18 @@
     width: 100%;
     border-radius: 20rpx;
 }
+
+.itemimage {
+    width: 100%;
+    border-radius: 20rpx;
+}
+
+.loading-container-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.loadingtext {
+    font-size: 25rpx;
+    width: 750rpx;
+}

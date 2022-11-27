@@ -7,9 +7,10 @@ db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
     const wxContext = cloud.getWXContext()
-    var liked = event.liked
-    var docid = event.docid
-    var title = event.title
+    const {liked, docid, title, doctype} = event
+    // var liked = event.liked
+    // var docid = event.docid
+    // var title = event.title
     if(liked){
         // 插入一条like数据
         return await db.collection("db_likes").add({
@@ -17,6 +18,7 @@ exports.main = async (event, context) => {
                 openid: wxContext.OPENID,
                 questionid: docid,
                 title: title,
+                doctype: doctype,
                 _createTime: Date.now()
             }
         })

@@ -1,0 +1,7 @@
+<!--pages/aboutme/aboutme.wxml-->
+<view class="main">
+    <view class="title">
+            <text>关于这个小程序</text>
+        </view>
+    <rich-text nodes="{{aboutext}}" class="abloutext"></rich-text>
+</view>

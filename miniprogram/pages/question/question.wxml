@@ -31,5 +31,10 @@
 </view>
 <van-notify id="van-notify" />
 
+
 <t-divider content="到底啦" />
+
+<view class="loading-container-flex">
+  <t-loading delay="500" loading="{{dataloading}}" theme="circular" size="50rpx" text="数据加载中..." t-class-text="loadingtext"></t-loading>
+</view>
 <view style="height: 50rpx;"></view>

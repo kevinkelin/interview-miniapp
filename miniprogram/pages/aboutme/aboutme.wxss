@@ -1,0 +1,21 @@
+/* pages/aboutme/aboutme.wxss */
+
+.main{
+    width: 90%;
+    margin: 0 auto;
+    color: rgb(89, 89, 89);
+    letter-spacing: 2rpx;
+    font-size: 14px;
+    word-spacing: 2px;
+    line-height: 26px;
+    visibility: visible;
+    word-break: break-word;
+}
+
+.title{
+    font-size: large;
+    margin-top: 10rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    color: steelblue;
+}

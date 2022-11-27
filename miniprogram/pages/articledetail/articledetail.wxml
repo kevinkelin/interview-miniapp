@@ -1,0 +1,32 @@
+<!--pages/questiondetail/questiondetail.wxml-->
+<view>
+    <t-skeleton theme="paragraph" animation="gradient" loading="{{skeletonload}}">
+        <view class="questiontitle">
+            <text>{{articledata.title}}</text>
+        </view>
+        <t-divider />
+        <view class="answerbox">
+            <view class="headerbox">
+                <view>分类: {{articledata.categories}}</view>
+                <view>浏览量: {{articledata.readcount}}</view>
+                <view>
+                    标签: <t-tag wx:for="{{articledata.tabs}}" wx:key="index" shape="round" size="small" icon="discount" class="tabsblock" variant="light-outline">{{item}}</t-tag>
+                </view>
+            </view>
+            <rich-text wx:if="{{contentrich}}" nodes="{{contentrich}}" class="answertext"></rich-text>
+            <towxml wx:if="{{content}}" nodes="{{content}}" />
+            <view class="copyright">
+                <text>文章来源自互联网，如有侵权请联系删除,以下是原文信息:</text>
+                <view wx:if="{{articledata.author}}">作者: {{articledata.author}}</view>
+                <view wx:if="{{articledata.link}}">原文链接: {{articledata.link}}</view>
+            </view>
+            
+        </view>
+        <view class="footer">
+            <van-button wx:if="{{liked}}" icon="good-job" bindtap="postlike">取消点赞</van-button>
+            <van-button wx:else="" icon="good-job-o" type="primary" bindtap="postlike">点赞</van-button>
+            <van-button open-type="share"  type="info" icon="share">分享</van-button>
+        </view>
+        <t-divider content="到底啦" />
+    </t-skeleton>
+</view>

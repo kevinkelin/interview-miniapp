@@ -9,9 +9,19 @@
 }
 
 .cell-title{
-    font-size:25rpx;
+    font-size:30rpx;
 }
 
 .loadingall{
     text-align: center;
+}
+
+.loading-container-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.loadingtext {
+    font-size: 25rpx;
+    width: 750rpx;
 }
