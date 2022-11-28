@@ -9,3 +9,7 @@
     font-size: 25rpx;
     width: 750rpx;
 }
+
+.cell-title{
+    font-size:30rpx;
+}

@@ -28,14 +28,14 @@
                 url="/pages/questiondetail/questiondetail?id={{item._id}}"
                 />
             </t-tab-panel>
-            <t-tab-panel label="热门文章" value="1">
+            <!-- <t-tab-panel label="热门文章" value="1">
                 <van-cell wx:for="{{hotContent.hotArticle.data}}" wx:key="index" 
                 title="{{item.title}}" 
                 is-link 
                 title-class="cell-title"
                 url="/pages/articledetail/articledetail?id={{item._id}}"
                 />
-            </t-tab-panel>
+            </t-tab-panel> -->
         </t-tabs>
     </t-skeleton>
 </view>

@@ -25,13 +25,14 @@
                 title-class="cell-title"
                 url="/pages/questiondetail/questiondetail?id={{item._id}}"
                 />
+                <view class="noquestion" wx:if="{{questions.length==0}}">
+                    <text>题库中还未收录，请耐心等待，感谢关注</text>
+                </view>
             </t-skeleton>
         </van-tab>
     </van-tabs>
 </view>
 <van-notify id="van-notify" />
-
-
 <t-divider content="到底啦" />
 
 <view class="loading-container-flex">

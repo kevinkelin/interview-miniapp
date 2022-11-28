@@ -18,7 +18,7 @@ Page({
             {
                 title: "后端技术",
                 value: "backend",
-                subTabs: ["all","java", "golang", "python"]
+                subTabs: ["all","java", "jvm", "golang", "python", "mq"]
             },
             {
                 title: "前端技术",

@@ -11,6 +11,13 @@
 .cell-title{
     font-size:30rpx;
 }
+.noquestion{
+    font-size: 25rpx;
+    text-align: center;
+    color:cadetblue;
+    margin: 10rpx, 0;
+    padding: 20rpx;
+}
 
 .loadingall{
     text-align: center;

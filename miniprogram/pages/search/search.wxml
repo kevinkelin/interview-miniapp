@@ -1,6 +1,10 @@
 <!--pages/search/search.wxml-->
 <view>
     <view>
+        <t-notice-bar visible="{{!hasUserInfo}}" prefixIcon="error-circle-filled" 
+        theme="warning"
+        content="搜索功能比较弱鸡，酌情使用">
+    </t-notice-bar>
         <van-search value="{{ searchText }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
     </view>
     <!-- 分类 -->
@@ -24,4 +28,5 @@
     <view class="loading-container-flex">
         <t-loading delay="500" loading="{{dataloading}}" theme="circular" size="50rpx" text="数据加载中..." t-class-text="loadingtext"></t-loading>
     </view>
+    <view style="height: 50rpx;"></view>
 </view>

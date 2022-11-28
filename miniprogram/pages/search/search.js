@@ -64,7 +64,7 @@ Page({
                 skip: skip
             }
         }).then(res=>{
-            if(res.result.data.length==0){
+            if(res.result.data.length==0 && this.data.articleRes.length==0){
                 wx.showToast({
                   title: '未搜索到任何数据',
                   icon:"error"
@@ -90,6 +90,12 @@ Page({
             searchText: e.detail
         })
         this.getsearchdata()
+    },
+
+    onCancel(e){
+        this.setData({
+            articles:[]
+        })
     },
 
     onTabChange(e){
@@ -150,7 +156,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom() {
-
+        this.getsearchdata()
     },
 
     /**

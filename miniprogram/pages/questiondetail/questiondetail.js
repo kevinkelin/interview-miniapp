@@ -31,7 +31,7 @@ Page({
             if (res.result.data.answer) {
                 answermarkdown_ = app.towxml(res.result.data.answer, 'markdown', {});
             }
-            if (res.result.data.answerrich) {
+            if (!(res.result.data.answerrich=="<p></p>" || res.result.data.answerrich=="<p>欢迎使用富文本编辑器</p>")) {
                 answerrich_ = common.replaceRichDetail(res.result.data.answerrich)
             }
             this.setData({

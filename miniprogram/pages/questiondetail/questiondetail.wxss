@@ -38,6 +38,10 @@
     margin-left: 32rpx;
 }
 
+towxml{
+    font-size: small
+}
+
 .footer{
     margin:20rpx 20rpx;
     display: flex;
