@@ -14,11 +14,12 @@ Page({
         tabActive: 0,
         questions: [],
         dataloading: false,
+        popvisible: false,
         qtypes:[
             {
                 title: "后端技术",
                 value: "backend",
-                subTabs: ["all","java", "jvm", "golang", "python", "mq"]
+                subTabs: ["all","java", "jvm", "golang", "python", "mq", "分步式"]
             },
             {
                 title: "前端技术",
@@ -52,7 +53,16 @@ Page({
             },
         ],
     },
-
+    handleAddClick(e){
+        this.setData({
+            popvisible: true
+        })
+    },
+    onPopClose(){
+        this.setData({
+            popvisible: false
+        })
+    },
     getsubtabs(ptypes){
         // 从云端获取分类的tab
         wx.cloud.callFunction({

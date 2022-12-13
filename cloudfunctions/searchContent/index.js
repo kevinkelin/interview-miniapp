@@ -7,14 +7,23 @@ const _  = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
     const wxContext = cloud.getWXContext()
-    let conditon = {
-        title:{
-            $regex:'.*' + event.q + '.*',
-            $options: 'i'
-        }
+    searchExpress = {
+        $regex:'.*' + event.q + '.*',
+        $options: 'i'
     }
+    let conditon = {}
+    let searchConditon = _.or([
+        {title:searchExpress},
+        {answer:searchExpress},
+        {answerrich: searchExpress}
+    ])
     if(event.qtype!="all"){
-        conditon.ptype = event.qtype
+        conditon = _.and([
+            searchConditon,
+            {ptype: event.qtype}
+        ])
+    }else{
+        conditon = searchConditon
     }
     return await db.collection("db_questions").where(conditon).field({answer: false, answerrich: false})
     .orderBy("readcount","desc")

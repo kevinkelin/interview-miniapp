@@ -13,6 +13,12 @@
             <van-cell wx:if="{{hasUserInfo}}" title="修改头像与昵称" is-link url="/pages/setProfile/setProfile?avatarUrl={{avatarurl}}&nickName={{nickName}}" />
             <van-cell wx:else="" title="设置头像与昵称" is-link url="/pages/setProfile/setProfile?avatarUrl={{avatarurl}}&nickName={{nickName}}" />
             <van-cell title="我的点赞" is-link url="/pages/mylike/mylike" />
+            <van-cell   use-label-slot="{{true}}" is-link url="/pages/submitq/submitq">
+                <view slot="title">
+                    <text style="color:green;">提交八股文</text>
+                    <t-tag theme="danger" size="small"  style="margin-left: 10rpx;">new</t-tag>
+                </view>
+            </van-cell>
             <van-cell title="关于这个小程序" is-link url="/pages/aboutme/aboutme" />
         </van-cell-group>
     </view>

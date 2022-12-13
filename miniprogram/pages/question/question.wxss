@@ -32,3 +32,8 @@
     font-size: 25rpx;
     width: 750rpx;
 }
+
+.popfeedback{
+    margin-bottom: 20rpx;
+    height: 200rpx;
+}
